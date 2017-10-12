@@ -3,13 +3,9 @@ import FilmPoster from './FilmPoster.js';
 import Fave from './Fave.js';
 
 class FilmRow extends Component {
-  handleDetailsClick(film) {
-    console.log(`Fetching details for ${film.title}`);
-  }
-
   render() {
     return (
-      <div className="film-row" onClick={() => this.handleDetailsClick(this.props.film)}>
+      <div className="film-row" onClick={this.props.onDetailsClick}>
         <FilmPoster film={this.props.film} />
         <div className="film-summary">
           <h1>{this.props.film.title}</h1>
