@@ -3,8 +3,13 @@ import FilmPoster from './FilmPoster.js';
 
 class FilmRow extends Component {
   render() {
+
+    handleDetailsClick(film) {
+      console.log(`Fetching details for ${film.title}!`);
+    }
+
     return (
-      <div className="film-row">
+      <div className="film-row" onClick={() => this.handleDetailsClick(this.props.film)}>
         <FilmPoster film={this.props.film} />
         <div className="film-summary">
           <h1>{this.props.film.title}</h1>
